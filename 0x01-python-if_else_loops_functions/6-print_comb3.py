@@ -5,5 +5,5 @@ for i in range(10):
             sp = " "
         else:
             sp = ", "
-        print("{}{}".format(i, j), end=sp)
+        print("{:d}{:d}".format(i, j), end=sp)
 print()
