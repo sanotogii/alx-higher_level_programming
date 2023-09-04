@@ -14,6 +14,8 @@ class Rectangle:
         if self.__height != 0 and self.__width != 0:
             for i in range(0, self.__height):
                 _str += "#" * self.__width
+                if i == self.__height-1:
+                    break
                 _str += "\n"
         return _str
 
