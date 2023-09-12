@@ -4,7 +4,7 @@
 
 def write_file(filename="", text=""):
     """write the file function"""
-    with open(filename, "x") as file:
+    with open(filename, "w") as file:
         file.write(text)
     return len(text)
 
