@@ -47,8 +47,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.intvalid("width", value)
-        self.valid_signe("width", value)
+        self.validation(value, self.__height, self.__x, self.__y)
         self.__width = value
 
     @property
@@ -59,8 +58,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setter"""
-        self.intvalid("height", value)
-        self.valid_signe("height", value)
+        self.validation(self.__width, value, self.__x, self.__y)
         self.__height = value
 
     @property
@@ -71,8 +69,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x setter"""
-        self.intvalid("x", value)
-        self.valid_value("x", value)
+        self.validation(self.__width, self.__height, value, self.__y)
         self.__x = value
 
     @property
@@ -81,6 +78,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.intvalid("y", value)
-        self.valid_value("y", value)
+        self.validation(self.__width, self.__height, self.__x, value)
         self.__y= value
