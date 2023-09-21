@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """test"""
+import unittest
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from models.rectangle import Rectangle
 from models.base import Base
-import unittest
 
 
 class TestBase(unittest.TestCase):
@@ -13,6 +12,7 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         """method"""
         Base._Base__nb_objects = 0
+
     def test_base(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
@@ -24,6 +24,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         b5 = Base()
         self.assertEqual(b5.id, 4)
+
 
 if __name__ == '__main__':
     unittest.main()
