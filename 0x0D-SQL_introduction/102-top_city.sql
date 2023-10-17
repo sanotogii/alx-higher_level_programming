@@ -5,4 +5,3 @@ WHERE month = 7 OR month = 8
 GROUP BY city
 ORDER BY avg_tmp DESC
 LIMIT 3;
-
