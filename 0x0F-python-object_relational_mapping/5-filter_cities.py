@@ -13,9 +13,7 @@ if __name__ == "__main__":
     cursor.execute("SELECT cities.name FROM cities INNER  \
         JOIN states ON states.id=cities.state_id \
         WHERE states.name=%s", (argv[4], ))
-    tuples = ()
-    for row in cursor.fetchall():
-        tuples += row
-        print(*tuples, sep=", ")
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
     cursor.close()
     db.close()
