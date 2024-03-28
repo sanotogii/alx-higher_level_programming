@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script takes a URL as an argument
-curl -s -w "%{size_download}"  -o /dev/null "$1"
+curl -s -w '%{size_download}\n' -o /dev/null "$1"
