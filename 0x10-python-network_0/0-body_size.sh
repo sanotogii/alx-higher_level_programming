@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script takes a URL as an argument
+# cURL body size
 curl -s -w '%{size_download}\n' -o /dev/null "$1"
