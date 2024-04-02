@@ -5,4 +5,4 @@
 # A variable subject must be sent with the value I will always be here for PLD
 # You have to use curl
 
-curl -X -d "email=test@gmail.com&subject=I will always be here for PLD" $1
+curl -X -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
