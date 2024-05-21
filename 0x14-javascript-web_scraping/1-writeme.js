@@ -10,7 +10,4 @@ if (!filePath) {
 fs.writeFile(filePath, data, 'utf8', (err) => {
   if (err) {
     console.error(err);
-  } else {
-    console.log(data);
-  }
 });
