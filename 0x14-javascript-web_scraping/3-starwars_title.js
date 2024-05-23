@@ -2,7 +2,7 @@
 
 const request = require('request');
 const Id = process.argv[2];
-const url = 'https://swapi-api.alx-tools.com/api/films/';
+const url = 'https://swapi-api.alx-tools.com/api/films/${Id}';
 
 if (!Id) {
   process.exit(1);
