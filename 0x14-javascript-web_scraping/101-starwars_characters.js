@@ -14,16 +14,25 @@ request(url, (error, response, body) => {
   } else {
     const film = JSON.parse(body);
     const characters = film.characters;
+    const characterNames = [];
 
-    characters.forEach(characterUrl => {
-      request(characterUrl, (charError, charResponse, charBody) => {
+    function printCharacterNames (index) {
+      if (index >= characters.length) {
+        characterNames.forEach(name => console.log(name));
+        return;
+      }
+
+      request(characters[index], (charError, charResponse, charBody) => {
         if (charError) {
           console.error(charError);
         } else {
           const character = JSON.parse(charBody);
-          console.log(character.name);
+          characterNames.push(character.name);
+          printCharacterNames(index + 1);
         }
       });
-    });
+    }
+
+    printCharacterNames(0);
   }
 });
